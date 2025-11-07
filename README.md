@@ -1,68 +1,90 @@
-﻿# HTF25-Team-118
+# RAG-Based Document Question Answering System 🤖📄
 
-## GitHub submission guide
+This project implements a **Retrieval-Augmented Generation (RAG) chatbot** that allows users to upload PDF documents, ask questions based on the content, and receive accurate, document-specific answers. It combines the power of **Cohere** for language processing and embeddings, **Pinecone** for efficient vector storage and retrieval, and **Streamlit** for a user-friendly interface.
 
-In this Readme, you will find a guide on how to fork this Repository, add files to it, and make a pull request to contribute your changes.
+---
 
-<details open>
-<summary><h3>1. Login to your GitHub Account</h3></summary>
-<br>
-<p>Go to <a href="https://github.com">github.com</a> to log in.</p>
-<ul>
-   <li>Open the <a href="https://github.com/cbitosc/HTF25-Team-118">current repo</a> in a new tab.</li>
-   <li>Perform all operations in the newly opened tab, and follow the current tab for instructions.</li>
-</ul>
-</details>
+## Features ✨
 
-<details open>
-<summary><h3>2. Fork the Repository</h3></summary>
-<br>
-<p align="center">
-  <img src="fork.jpeg" alt="Fork the Repository" height="300">
-</p>
-<ul>
- <li>In the newly opened tab, on the top-right corner, click on <b>Fork</b>.</li>
- <li>Enter the <b>Repository Name</b> as <b>HTF25-Team-118</b>.</li>
- <li>Then click <b>Create Fork</b>, leaving all other fields as default.</li>
- <li>After a few moments, you can view your forked repo.</li>
-</ul>
-</details>
+- **PDF Processing**: Extracts text from uploaded PDF documents and splits it into manageable chunks for embedding and storage.  
+- **Embedding and Retrieval**: Uses Cohere's embeddings for encoding document chunks and Pinecone for scalable vector similarity search.  
+- **Question Answering**: Leverages Cohere's language models to generate accurate responses by retrieving and analyzing relevant document chunks.  
+- **Interactive Interface**: Provides a simple and intuitive interface using Streamlit for uploading documents, entering queries, and viewing results.  
 
-<details open>
-<summary><h3>3. Clone your Repository</h3></summary>
-<br>
-<ul>
- <li>Click on <b>Code</b> and from the dropdown menu copy your <b>web URL</b> of your forked repository.</li>
- <li>Now open terminal on your local machine.</li>
- <li>Run this command to clone the repo:</li>
-<pre><code>git clone https://github.com/your-username/HTF25-Team-118.git</code></pre>
-</ul>
-</details>
+---
 
-<details open>
-<summary><h3>4. Adding files to the Repository</h3></summary>
-<br>
-<ul>
- <li>While doing it for the first time, create a new branch for your changes:</li>
-<pre><code>git checkout -b branch-name</code></pre>
- <li>Add your files or make modifications to existing files.</li>
- <li>Stage your changes:</li>
-<pre><code>git add .</code></pre>
- <li>Commit your changes:</li>
-<pre><code>git commit -m "Descriptive commit message"</code></pre>
- <li>Push your branch to your fork:</li>
-<pre><code>git push origin branch-name</code></pre>
-</ul>
-</details>
+## How to Use 🚀
 
-<details open>
-<summary><h3>5. Create a Pull Request</h3></summary>
-<br>
-<ul>
- <li>Click on the <b>Contribute</b> button in your fork and choose <b>Open Pull Request</b>.</li>
- <li>Leave all fields as default, then click <b>Create Pull Request</b>.</li>
- <li>Wait a few moments; your PR is now submitted.</li>
-</ul>
-</details>
+Follow the steps below to run and interact with the project:
 
-## Thanks for participating!
+### 1. Clone the Repository
+Clone the repository to your local system using the following command:
+```bash
+git clone https://github.com/Sindhu-987/HTF25-Team-118.git
+cd RAG_Document_Question_Answering
+```
+
+### 2. Create and Activate a Virtual Environment 🏗️
+Create a virtual environment and activate it to isolate project dependencies:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+### 3. Install Dependencies 📦
+Install the required Python libraries using the provided requirements.txt file:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Obtain API Keys 🔑
+Get your API keys for:
+
+- Cohere: Sign up at Cohere to obtain an API key.
+- Pinecone: Sign up at Pinecone to obtain an API key.
+These keys will be entered via the Streamlit interface when running the app.
+
+### 5. Run the Application 🏃‍♂️
+
+Launch the Streamlit application:
+
+```bash
+cd src
+streamlit run app.py
+```
+
+### 6. Access the Application 🌐
+Once the application is running, open your browser and navigate to the URL provided by Streamlit, typically http://localhost:8501.
+
+### 7. Upload a Document 📄
+Use the interface to upload a PDF file containing the content you want to query.
+
+### 8. Ask Questions ❓
+- Enter your question in the query box. The chatbot will:
+
+- Retrieve relevant chunks of text from the uploaded document.
+- Generate a precise and context-aware response.
+
+# Project Structure 📁
+```bash
+├── app.py                # Main application file with Streamlit interface
+├── vectorstore.py        # Handles PDF processing, embedding, and retrieval
+├── chatbot.py            # Handles user interaction and response generation
+├── requirements.txt      # Project dependencies
+├── README.md             # Project documentation
+```
+
+### Future Enhancements 🚧
+Add support for multi-language documents.
+Enhance the UI with multi-document support and export options for chat history.
+Enable deployment to cloud platforms for wider accessibility.
+Integrate additional vector databases for broader compatibility.
+
+
+### Acknowledgments 🙏
+
+- **Cohere AI** for their powerful embedding and language models. 🧠✨
+- **Pinecone** for scalable vector search infrastructure. 🔍⚡
+- **Streamlit** for making it easy to build interactive data apps. 📊🎉
